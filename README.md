@@ -1,2 +1,2 @@
 # Course-Work
-A detailed look at all the course I've taken.
+A detailed look at all the courses I've taken.
