@@ -35,7 +35,7 @@ void parse_line(const string& str,
     }
 }
 
-void breathFirstSearch(map<string, Person> people, string startingName,
+void breathFirstSearch(map<string, Person> &people, string startingName,
     string endingName) {
     string currentName;
     Person tmpNode, nextNode;
@@ -86,6 +86,7 @@ int main() {
     vector<string> names;
     map<string, Person> everyone;
     string inputLine;
+    
 
     // Verify that the file open was OK
     if (!inFile.good()) {
@@ -122,7 +123,7 @@ int main() {
     }
 
     for (;;) {
-
+        Person node;
         // User Prompt
         cout << "Enter the starting name (X to quit): ";
         getline(cin, inputLine);
@@ -137,7 +138,18 @@ int main() {
         if (IS_QUIT(inputLine))
             break;
         string end = inputLine;
-
+        
+        // Resets visited flag to false;
+        for (int i = 0; i < names.size(); i++)
+        {
+            node = everyone[names[i]];
+            if (node.visited)
+            {
+                node.visited = false;
+            }
+            everyone[names[i]] = node;
+        }
+    
         breathFirstSearch(everyone, start, end); //Used to search for path between two people.
     }
     cout << "Exiting..." << endl;
