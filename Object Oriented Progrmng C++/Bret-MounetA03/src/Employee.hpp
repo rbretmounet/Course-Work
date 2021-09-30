@@ -6,7 +6,7 @@ using namespace std;
 
 class Employee{
 	public:
-		// Member function prototypes
+		//Member function prototypes
 		void payCalc();
 
 		//Getter prototypes
@@ -25,6 +25,7 @@ class Employee{
 
 
 	private:
+		//Employee data values.
 		string name;
 		float hours;
 		float rate;

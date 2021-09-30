@@ -9,12 +9,16 @@ Employee::Employee(){
 	overtimePay = 0;
 	totalPay = 0;
 }
-void Employee::payCalc(){
 
+// Function used to calculate the employee's pay
+void Employee::payCalc(){\
+	//Checks to see if the employee has more than 40 hours
 	if (hours > 40){
+		//If true that calculate regular pay up to 40 hours and overtime pay after 40 hours.
 		regularPay = rate*40;
 		overtimePay = (1.5*rate) * (hours-40);
 	}else{
+		//Otherwise no overtime pay and only regular pay
 		regularPay = rate*hours;
 		overtimePay = 0;
 	}
