@@ -2,7 +2,13 @@
 using namespace std;
 
 //constructors
-
+Bus::Bus(){
+	busID = 0;
+	capacity = 0;
+	mileage = 0;
+	type = ' ';
+	status = ' ';
+}
 
 Bus::Bus(int i, char t, int c, int m , char s){
 	busID = i;
